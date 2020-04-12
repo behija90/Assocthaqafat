@@ -1,0 +1,80 @@
+<div id="wrapper" class="right-sidebar">
+<nav id="sidebar" role="navigation" class="navbar-default navbar-static-side">
+    <div class="sidebar-collapse menu-scroll">
+        <ul id="side-menu" class="nav">
+            <li class="user-panel">
+                <div class="info"><p>فتحي الجراي </p>
+                    <ul class="list-inline list-unstyled">
+                        <li><a href="extra-profile.html" data-hover="tooltip" title="Profile"><i
+                                        class="fa fa-user"></i></a></li>
+                        <li><a href="email-inbox.html" data-hover="tooltip" title="Mail"><i
+                                        class="fa fa-envelope"></i></a></li>
+                        <li><a href="#" data-hover="tooltip" title="Setting" data-toggle="modal"
+                               data-target="#modal-config"><i class="fa fa-cog"></i></a></li>
+                        <li><a href="extra-signin.html" data-hover="tooltip" title="Logout"><i
+                                        class="fa fa-sign-out"></i></a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+            <li><a href="{{ path('back_accueil') }}"><i class="fa fa-home fa-fw">
+                        <div class="icon-bg bg-orange"></div>
+                    </i><span class="menu-titl*e">الرئيسية </span></a>
+            </li>
+
+            <li><a href="#"><i class="fa fa-file-pdf-o ">
+
+                    </i><span class="menu-title">نشرية ثقافات</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li><a href="{{ path('bulletin_liste') }}"><i class="far fa-list-alt"></i><span class="submenu-title">قائمة النشريات </span></a>
+                    </li>
+                    <li><a href="{{ path('bulletin_ajouter') }}"><i class="fa fa-file-pdf-o "></i><span class="submenu-title">إضافة نشرية جديدة </span></a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-file-o fa-fw">
+                        <div class="icon- bg bg-yellow"></div>
+                    </i><span class="menu-title">الأنشطة والبرامج</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li><a href="{{ path('activites_liste') }}"><i class="far fa-list-alt"></i><span class="submenu-title">قائمة الأنشطة </span></a>
+                    </li>
+                    <li><a href="{{ path('activite_ajouter') }}"><i class="far fa-plus-square"></i><span class="submenu-title">إضافة نشاط جديد </span></a>
+                    </li>
+
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-database fa-fw">
+                        <div class="icon- bg bg-yellow"></div>
+                    </i><span class="menu-title">البيانات المفتوحة</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li><a href="{{ path('activites_liste') }}"><i class="far fa-list-alt"></i><span class="submenu-title">Liste des données</span></a>
+                    </li>
+                    <li><a href="{{ path('activite_ajouter') }}"><i class="far fa-plus-square"></i><span class="submenu-title">Ajouter données</span></a>
+                    </li>
+
+                </ul>
+                <ul class="nav nav-second-level">
+                    <li><a href="{{ path('back_clear_cache') }}"><i class="far fa-list-alt"></i><span class="submenu-title">clear cache</span></a>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li><a href="{{ path('affiliation_liste') }}"><i class="fa fa-user fa-fw">
+                        <div class="icon-bg bg-orange"></div>
+                    </i><span class="menu-titl*e">قائمة المنخرطين  </span></a>
+            </li>
+            <li><a href="#"><i class="far fa-newspaper"></i>
+
+                    <span class="menu-title">الأخبـــــــار</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li><a href="{{ path('news_liste') }}"><i class="far fa-list-alt"></i><span class="submenu-title">قائمة الأخبار </span></a>
+                    </li>
+                    <li><a href="{{ path('news_ajouter') }}"><i class="far fa-newspaper"></i><span class="submenu-title">إضافة خبر جديد </span></a>
+                    </li>
+                </ul>
+            </li>
+
+           </ul>
+    </div>
+</nav>

@@ -1,0 +1,17 @@
+site.name: 'Tunisian Association of Shared Heritage «Thaqâfât»'
+site.number_visits: 'Le nombre de visites sur le site'
+navbar.home: Home
+navbar.membres: 'Members and founders'
+navbar.activities: 'Activities and programs'
+navbar.affliation: Affiliate
+navbar.newsletter: Newsletter
+navbar.openData: 'Open data'
+navbar.news: News
+navbar.contact: 'Contact us'
+navbar.language: Language
+navbar.choose: Choose language
+navbar.lg: Anglais
+contact.email: Email
+contact.subject: Subject
+contact.message: Message
+contact.btn: Send

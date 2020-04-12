@@ -1,0 +1,107 @@
+{% extends 'backOffice/base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="col-lg-12">
+        <h3>Ajouter bulletin </h3>
+        <ul class="closeable-tabs nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">
+                    <button type="button" class="close closeTab mlm">x</button>
+                    العربية </a></li>
+            <li><a href="#profile" data-toggle="tab">
+                    <button type="button" class="close closeTab mlm">x</button>
+                    English</a></li>
+
+            <li><a href="#profile2" tabindex="-1" data-toggle="tab">
+                    <button type="button" class="close closeTab mlm"><i class="fa fa-file"></i></button>
+                    Fichiers</a></li>
+        </ul>
+        <form class="form-validate" method="post" role="form" enctype="multipart/form-data">
+            <div id="myCloseableTabContent" class="tab-content">
+                <div id="home" class="tab-pane fade in active"  dir="rtl">
+                    <div>
+                        <div class="portlet box portlet-yellow">
+                            <div class="portlet-header">
+                                <div class="caption"  > معلومات حول النشرية  </div>
+                                <div class="tools"><i class="fa fa-chevron-up"></i><i data-toggle="modal"
+                                                                                      data-target="#modal-config"
+                                                                                      class="fa fa-cog"></i>
+                                    <i class="fa fa-refresh"></i><i class="fa fa-times"></i>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="form-group"><label for="" class="control-label">عنوان النشرية </label>
+
+                                    {{ form_widget(form.titreAr) }}
+                                </div>
+                                <div class="form-group"><label for="" class="control-label">وصف النشرية </label>
+                                    {{ form_widget(form.descriptionAr)  }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="profile" class="tab-pane fade">
+                    <div>
+                        <div class="portlet box portlet-yellow">
+                            <div class="portlet-header">
+                                <div class="caption">Add description of the newsletter </div>
+                                <div class="tools"><i class="fa fa-chevron-up"></i><i data-toggle="modal"
+                                                                                      data-target="#modal-config"
+                                                                                      class="fa fa-cog"> </i>
+                                    <i class="fa fa-refresh"></i><i class="fa fa-times"></i>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="form-group"><label for="" class="control-label">Title </label>
+                                    {{ form_widget(form.titreEn )}}
+                                </div>
+                                <div class="form-group"><label for="" class="control-label">Description </label>
+                                    {{ form_widget(form.descriptionEn) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="profile2" class="tab-pane fade">
+                    <div>
+                        <div class="portlet box portlet-yellow">
+                            <div class="portlet-header">
+                                <div class="caption">ملف pdf </div>
+                                <div class="tools"><i class="fa fa-chevron-up"></i><i data-toggle="modal"
+                                                                                      data-target="#modal-config"
+                                                                                      class="fa fa-cog"> </i>
+                                    <i class="fa fa-refresh"></i><i class="fa fa-times"></i>
+                                </div>
+                            </div>
+                            <div class="portlet-body" dir="rtl">
+                                <div class="form-group"><label for="" class="control-label">ملف pdf</label>
+                                    {{ form_widget(form.file) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(form.publier) }}
+                                </div>
+
+                                {{ form_rest(form) }}
+                                <button type="submit" class="btn btn-success">ارسال </button>&nbsp;
+                                <button
+                                        type="button" class="btn btn-default">إلغاء
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}
+
+
+

@@ -1,0 +1,18 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+    <h4>Contact</h4>
+{{ form_start(form) }}
+    {{ form_row(form.nomPrenom) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.telephone) }}
+    {{ form_row(form.sujet) }}
+    {{ form_row(form.message) }}
+
+    <button type="submit" class="btn btn-success">إرســــال</button>
+    {{ form_end(form) }}
+{% endblock %}
+
+
+

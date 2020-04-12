@@ -1,0 +1,50 @@
+.content {
+    float:left;
+}
+.content .inner-wrapper {
+    background-color:#FFF;
+    padding:20px;
+}
+.content p {
+    font-size:16px;
+    font-weight:100;
+    color:#bababa;
+    padding-bottom:10px;
+}
+.content .info-wrapper {
+    float:left;
+    width:100%;
+    border-top:1px solid #EFEFEF;
+    padding-top:15px;
+}
+.content .info-wrapper span {
+    font-size:14px;
+    font-weight:100;
+    color:#bababa;
+    margin-right:14px;
+}
+.content .info-wrapper span i {
+    color: #848484;
+    margin-right: 8px;
+}
+
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    line-height: 108px;
+    font-size: 30px;
+    color: #000000;
+}
+
+.jumbotron {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.page-title-div{
+    margin-top:130px;
+}

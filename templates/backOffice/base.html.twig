@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from swlabs.co/madmin/code/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Feb 2018 19:45:55 GMT -->
+<head>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="Thu, 19 Nov 1900 08:52:00 GMT">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{{ asset('backOffice/images/icons/favicon.html') }}">
+    <link rel="apple-touch-icon" href="{{ asset('backOffice/images/icons/favicon-2.html') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('backOffice/images/icons/favicon-72x72.html') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('backOffice/images/icons/favicon-114x114.html') }}">
+
+    {% block stylesheets %}
+        <!--Loading bootstrap css-->
+        <link type="text/css" rel="stylesheet"
+              href="../../../fonts.googleapis.com/css6f1c.css?family=Open+Sans:400italic,400,300,700">
+        <link type="text/css" rel="stylesheet"
+              href="../../../fonts.googleapis.com/css39f3.css?family=Oswald:400,700,300">
+        <link type="text/css" rel="stylesheet"
+              href="{{ asset('backOffice/vendors/jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css') }}">
+        <link type="text/css" rel="stylesheet"
+              href="{{ asset('backOffice/vendors/font-awesome/css/font-awesome.min.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/bootstrap/css/bootstrap.min.css') }}">
+
+        <!--LOADING STYLESHEET FOR PAGE-->
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/bootstrap-colorpicker/css/colorpicker.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/bootstrap-datepicker/css/datepicker.css') }}">
+
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/intro.js/introjs.css') }}">
+        <link type="text/css" rel="stylesheet"
+              href="{{ asset('backOffice/vendors/calendar/zabuto_calendar.min.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/sco.message/sco.message.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/intro.js/introjs.css') }}">
+        <!--Loading style vendors-->
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/animate.css/animate.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/jquery-pace/pace.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/iCheck/skins/all.css') }}">
+        <link type="text/css" rel="stylesheet"href="{{ asset('backOffice/vendors/jquery-notific8/jquery.notific8.min.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/bootstrap-daterangepicker/daterangepicker-bs3.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/bootstrap-clockface/css/clockface.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/vendors/bootstrap-switch/css/bootstrap-switch.css') }}">
+
+
+        <!--Loading style-->
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/css/themes/style1/orange-blue.css') }}"
+              class="default-style">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/css/themes/style1/orange-blue.css') }}"
+              id="theme-change" class="style-change color-change">
+        <link type="text/css" rel="stylesheet" href="{{ asset('backOffice/css/style-responsive.css') }}">
+    {% endblock %}
+</head>
+<body class=" ">
+<div>
+
+    <!--BEGIN BACK TO TOP-->
+    <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
+    <!--END BACK TO TOP-->
+
+    <!--BEGIN TOPBAR-->
+    {{ render(controller('App\\Controller\\BackOffice\\DefaultController::topBar')) }}
+    <!--END TOPBAR-->
+
+    <div id="wrapper">
+        <!--BEGIN SIDEBAR MENU-->
+        {{ include('backOffice/includes/nav.html.twig') }}
+        <!--END SIDEBAR MENU-->
+
+        <!--BEGIN CHAT FORM-->
+
+
+        <!--END CHAT FORM-->
+
+        <!--BEGIN PAGE WRAPPER-->
+        <div id="page-wrapper">
+            <!--BEGIN TITLE & BREADCRUMB PAGE-->
+            <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+                <div class="page-header pull-left">
+                    <div class="page-title">Dashboard</div>
+                </div>
+                <ol class="breadcrumb page-breadcrumb pull-left">
+                    <li><i class="fa fa-home"></i>&nbsp;<a href="index-2.html">Home</a>&nbsp;&nbsp;<i
+                                class="fa fa-angle-right"></i>&nbsp;&nbsp;
+                    </li>
+                    <li class="hidden"><a href="#">Dashboard</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+                    </li>
+                    <li class="active">Dashboard</li>
+                </ol>
+                <div class="btn btn-blue reportrange"><i class="fa fa-calendar"></i>&nbsp;<span></span>&nbsp;report&nbsp;<i
+                            class="fa fa-angle-down"></i><input type="hidden" name="datestart"/><input type="hidden"
+                                                                                                       name="endstart"/>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!--END TITLE & BREADCRUMB PAGE-->
+
+            <!--BEGIN CONTENT-->
+            <div class="page-content">
+                {% block body %}
+                {% endblock %}
+            </div>
+
+            <!--END CONTENT-->
+        </div>
+
+        <!--BEGIN FOOTER-->
+        {{ include('backOffice/includes/footer.html.twig') }}
+        <!--END FOOTER-->
+
+        <!--END PAGE WRAPPER-->
+    </div>
+</div>
+<script src="{{ asset('backOffice/js/jquery-1.10.2.min.js') }}"></script>
+<script src="{{ asset('backOffice/js/jquery-migrate-1.2.1.min.js') }}"></script>
+<script src="{{ asset('backOffice/js/jquery-ui.js') }}"></script>
+<!--loading bootstrap js-->
+<script src="{{ asset('backOffice/vendors/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js') }}"></script>
+<script src="{{ asset('backOffice/js/html5shiv.js') }}"></script>
+<script src="{{ asset('backOffice/js/respond.min.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/metisMenu/jquery.metisMenu.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/slimScroll/jquery.slimscroll.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/jquery-cookie/jquery.cookie.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/iCheck/icheck.min.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/iCheck/custom.min.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/jquery-notific8/jquery.notific8.min.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/jquery-highcharts/highcharts.js') }}"></script>
+<script src="{{ asset('backOffice/js/jquery.menu.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/jquery-pace/pace.min.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/holder/holder.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/responsive-tabs/responsive-tabs.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/jquery-news-ticker/jquery.newsTicker.min.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/moment/moment.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/bootstrap-timepicker/js/bootstrap-timepicker.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/bootstrap-clockface/js/clockface.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/bootstrap-colorpicker/js/bootstrap-colorpicker.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/jquery-maskedinput/jquery-maskedinput.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/charCount.js') }}"></script>
+<script src="{{ asset('backOffice/js/form-components.js') }}"></script>
+
+<script src="{{ asset('backOffice/javascript/ajouter-files.js') }}"></script>
+<script src="{{ asset('backOffice/javascript/ajouter-images.js') }}"></script>
+<script src="{{ asset('backOffice/javascript/ajouter-videos.js') }}"></script>
+
+<!--CORE JAVASCRIPT-->
+<script src="{{ asset('backOffice/js/main.js') }}"></script>
+<!--LOADING SCRIPTS FOR PAGE-->
+<script src="{{ asset('backOffice/vendors/intro.js/intro.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/flot-chart/jquery.flot.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/flot-chart/jquery.flot.categories.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/flot-chart/jquery.flot.pie.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/flot-chart/jquery.flot.tooltip.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/flot-chart/jquery.flot.resize.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/flot-chart/jquery.flot.fillbetween.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/flot-chart/jquery.flot.stack.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/flot-chart/jquery.flot.spline.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/calendar/zabuto_calendar.min.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/sco.message/sco.message.js') }}"></script>
+<script src="{{ asset('backOffice/vendors/intro.js/intro.js') }}"></script>
+<script src="{{ asset('backOffice/js/index.js') }}"></script>
+<script src="{{ asset('backOffice/js/bootbox.js') }}"></script>
+<script src="{{ asset('backOffice/javascript/confirmation-suppression.js') }}"></script>
+<script src="{{ asset('backOffice/javascript/load-data-in-modal.js') }}"></script>
+
+<script type="text/javascript">(function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '../../../www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-145464-14', 'auto');
+    ga('send', 'pageview');
+
+
+</script>
+</body>
+<!-- Mirrored from swlabs.co/madmin/code/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Feb 2018 19:48:52 GMT -->
+</html>

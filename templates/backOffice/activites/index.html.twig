@@ -1,0 +1,103 @@
+{% extends 'backOffice/base.html.twig' %}
+
+{% block body %}
+
+    <div class="content-wrapper" dir="rtl">
+        <div class="row grid-margin">
+            <div class="col-lg-12">
+                <div class="portlet box">
+                    <div class="portlet-header">
+                        <div class="caption">Liste activite</div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="row mbm">
+                            <div class="col-lg-12">
+                                {% for message in app.flashes('msgSuccess') %}
+                                    <div class="alert alert-success">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                                <div class="table-responsive">
+                                    <table id="table_id"
+                                           class="table table-hover table-striped table-bordered table-advanced tablesorter display">
+                                        <thead>
+                                        <tr>
+                                            <th>صورة النشاط </th>
+                                            <th>عنوان النشاط </th>
+                                            <th>النسخة العربية</th>
+                                            <th>النسخة الأنجلزية</th>
+                                            <th>تاريخ التسجيل</th>
+                                            <th>نشر</th>
+                                            <th width="25%">Actions</th>
+                                        </tr>
+                                        <tbody>
+                                        {% for activite in activite %}
+                                            <tr>
+                                                <td>
+                                                    <img src="{{ asset(activite.image.webPath) }}" width="75" height="60">
+                                                </td>
+                                                <td>{{ activite.titreAr }}</td>
+                                                <td>
+                                                    <a href="{{ path('activite_voir', {'id': activite.id, 'lang': 'ar'}) }}"
+                                                       style="color: #0f57a3">انقر هنا للمزيد من المعلومات</a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ path('activite_voir', {'id': activite.id, 'lang': 'en'}) }}">
+                                                        Click here for more information</a>
+                                                </td>
+                                                <td>{{ activite.date|date('d/m/Y') }}</td>
+                                                <td>
+                                                    {% if activite.publier %}
+                                                        <a href="{{ path('activite_publier', {'id': activite.id}) }}"
+                                                           class="btn btn-success btn-xs" title="Activé">
+                                                            <i class="fa fa-check"></i>
+                                                        </a>
+                                                    {% else %}
+                                                        <a href="{{ path('activite_publier', {'id': activite.id}) }}"
+                                                           class="btn btn-danger btn-xs" title="Désactivé">
+                                                            <i class="fa fa-times"></i>
+                                                        </a>
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    {#<a href="{{ path('activite_ajouter', {'id': activite.id}) }}">#}
+                                                        {#<button type="button" class="btn btn-info btn-xs mbs"><i#}
+                                                                    {#class="fa fa-plus"></i>&nbsp;#}
+                                                            {#Add#}
+                                                        {#</button>#}
+                                                    {#</a>#}
+
+                                                    <a href="{{ path('activite_modifier', {'id': activite.id}) }}">
+                                                        <button type="button" class="btn btn-success btn-xs mbs"><i
+                                                                    class="fa fa-edit"></i>&nbsp;
+                                                            تحيين
+                                                        </button>
+                                                    </a>
+                                                    <a href="{{ path('activite_supprimer', {'id': activite.id}) }} "
+                                                       class="confirm-supp">
+                                                        <button type="button" class="btn btn-danger btn-xs mbs"><i
+                                                                    class="fa fa-trash-o"></i>&nbsp;
+                                                            حذف
+                                                        </button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+
+                                        {% endfor %}
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock %}

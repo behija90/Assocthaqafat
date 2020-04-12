@@ -1,0 +1,72 @@
+{% extends 'frontOffice/base.html.twig' %}
+{% block page_title %}{{ 'navbar.contact'|trans }}{% endblock %}
+{% block body %}
+
+    <div class="single-blog-page-area contact-page-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 float-rtl first-col">
+                    <div class="author-comment">
+                    <div class="leave-comments-area" id="#form-contact">
+                        <h1 class="title-bg">{{ 'navbar.contact'|trans }}</h1>
+                        <br>
+                        <div id="form-messages"></div>
+                        {% for message in app.flashes('msgSuccess') %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                        {{ form_start(form) }}
+
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="label-blue">{{ 'contact.email'|trans }}</div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.email) }}
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="label-blue">{{ 'contact.subject'|trans }}</div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.sujet) }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        {{ form_row(form.sujet) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="label-blue">{{ 'contact.message'|trans }}</div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.message) }}
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button class="btn-send" type="submit">{{ 'contact.btn'|trans }} </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+               {#     <div class="google-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9364273.363926433!2d-12.392661146939734!3d55.03971934808962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited+Kingdom!5e0!3m2!1sen!2sbd!4v1500619264549"
+                                width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>#}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

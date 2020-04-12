@@ -1,0 +1,12 @@
+.has-switch .switch-on label {
+    border-bottom-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    background-color: #e5e5e5;
+}
+
+.lien
+a:hover,
+a:focus {
+    color: #0044cc;
+    text-decoration: underline;
+}

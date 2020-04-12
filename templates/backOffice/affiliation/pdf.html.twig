@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>جـــذاذة انخـــراط</title>
+    <link rel="stylesheet"
+          href="{{ absolute_url(asset('frontOffice/css/bootstrap.min.css')) }}"/>
+
+    <style>
+        body {
+            font-family: "Times New Roman";
+            color: rgb(33, 33, 33);
+            padding: 0 30px;
+            font-size: 2em;
+            text-align: right;
+
+        }
+
+        page {
+            background: white;
+            display: block;
+            margin: 0 auto;
+            padding-top: 250px
+        }
+
+        page[size="A4"] {
+            width: 21cm;
+            height: 29.7cm;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        page {
+            background: url('{{ absolute_url(asset('backOffice/images/affiliation.jpg')) }}');
+            background-repeat: repeat-y;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<page size="A4" >
+
+
+    <div class="row">
+
+        <label for="firstName">الاسم واللقـــب</label>
+        {{ affiliation.nomPrenom }}
+    </div>
+
+    <div class="row">
+        <label for="lastName">تاريخ الولادة ومكانها</label>
+        {{ affiliation.dateLieuNaissance }}
+    </div>
+    <div class="row">
+
+        <label for="email">الجنسيـّــة </label>
+        {{ affiliation.nationalite }}
+    </div>
+
+    <div class="row">
+
+        <label for="address">عدد ب ت و/جواز السفر</label>
+        {{ affiliation.numCin }}
+        <label for="address2">تاريخ الإصدار ومكانه </label>
+        {{ affiliation.dateLieuEmission }}
+    </div>
+
+    <div class="row">
+        <label for="email">المهنـــــــة </label>
+        {{ affiliation.profession }}
+    </div>
+    <div class="row">
+
+        <label for="email">العنــوان البريــدي </label>
+        {{ affiliation.adresse }}
+    </div>
+    <div class="row">
+        <label for="email">العنـــوان الالكترونـــي </label>
+        {{ affiliation.email }}
+    </div>
+    <div class="row">
+        <label for="email">الهاتــف </label>
+        {{ affiliation.telephone }}
+    </div>
+    <div class="row">
+        <label for="email">صنف الانخراط</label>
+        {{ affiliation.categorieAffi }}
+    </div>
+    <br>
+
+    <div class="row">
+        <label>التاريخ والإمضــــــــاء</label>
+        <div>
+            {{ affiliation.dateCreation|date('d-m-y') }}
+        </div>
+    </div>
+
+
+</page>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+
+<!doctype html>
+<!-- {% if app.request.locale == 'ar' %}><!--><html dir="rtl">
+<!-- {% elseif app.request.locale != 'ar' %}><!--><html dir="ltr"><!-- {% endif %}-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block page_title %}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="{{ asset('frontOffice/images/logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontOffice/images/fav.png') }}">
+
+    <!-- Place favicon.ico in the root directory -->
+    <!-- all css here -->
+    <!-- bootstrap v3.3.6 css -->
+    <link rel="stylesheet" href="{{ asset('frontOffice/css/bootstrap.min.css') }}">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="{{ asset('frontOffice/css/font-awesome.min.css') }}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{{ asset('frontOffice/css/animate.css') }}">
+    <!-- hover-min css -->
+    <link rel="stylesheet" href="{{ asset('frontOffice/css/hover-min.css') }}">
+    <!-- magnific-popup css -->
+    <link rel="stylesheet" href="{{ asset('frontOffice/css/magnific-popup.css') }}">
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="{{ asset('frontOffice/css/meanmenu.min.css') }}">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" href="{{ asset('frontOffice/css/owl.carousel.css') }}">
+    <!-- lightbox css -->
+    <link href="{{ asset('frontOffice/css/lightbox.min.css') }}" rel="stylesheet">
+    <!-- nivo slider CSS -->
+    <link rel="stylesheet" href="{{ asset('frontOffice/inc/custom-slider/css/nivo-slider.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('frontOffice/inc/custom-slider/css/preview.css') }}" type="text/css"
+          media="screen"/>
+    <!-- style css -->
+    <link rel="stylesheet" href="{{ asset('frontOffice/css/style.css') }}">
+    <!-- slick -->
+
+    <!-- ticker -->
+    <!-- Plugin styles -->
+    <link type="text/css" rel="stylesheet" href="{{ asset('frontOffice/ticker/css/jquery.jConveyorTicker.min.css') }}" />
+    <!-- Demo styles -->
+    <link type="text/css" rel="stylesheet" href="{{ asset('frontOffice/ticker/demo-files/demo-styles.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('frontOffice/ticker/css/ticker.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('frontOffice/ticker/css/costum.css') }}"/>
+
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{{ asset('frontOffice/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontOffice/css/custom.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontOffice/slick/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('frontOffice/slick/slick-theme.css') }}">
+    <style type="text/css">
+
+        .slider {
+            width: 50%;
+            margin: 100px auto;
+        }
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+        }
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: 1;
+        }
+
+        .slick-active {
+            opacity: 1;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+    </style>
+    <!-- modernizr js -->
+    <script src="{{ asset('frontOffice/js/modernizr-2.8.3.min.js') }}"></script>
+</head>
+
+<body class="home">
+
+<!--Header area start here-->
+{{ include('frontOffice/includes/header.html.twig') }}
+<!--Header area end here-->
+
+
+{{ render(controller('App\\Controller\\FrontOffice\\DefaultController:barreNews')) }}
+
+<div class="col-md-1 breadcrumb ticker-title" style="height:45px; font-family: 'Times New Roman';size: 30px; direction: rtl;">
+    <span class="fa sep " style="direction: rtl;"></span><a><b><G>الأخبـــــــار  </G></b></a>
+</div>
+<div class="row" style="background-color: #21afd3; height: 20px; margin-top: 45px;"></div>
+
+{% block body %}{% endblock %}
+
+
+{{ include('frontOffice/includes/footer.html.twig') }}
+<!-- Start scrollUp  -->
+<div id="return-to-top">
+    <span>أعلى</span>
+</div>
+<!-- End scrollUp  -->
+
+<!-- Footer Area Section End Here -->
+
+<!-- all js here -->
+<script src="{{ asset('frontOffice/js/jquery.min.js') }}"></script>
+
+<!-- jquery-ui js -->
+<script src="{{ asset('frontOffice/js/jquery-ui.min.js') }}"></script>
+<!-- bootstrap js -->
+<script src="{{ asset('frontOffice/js/bootstrap.min.js') }}"></script>
+<!-- meanmenu js -->
+<script src="{{ asset('frontOffice/js/jquery.meanmenu.js') }}"></script>
+<!-- wow js -->
+<script src="{{ asset('frontOffice/js/wow.min.js') }}"></script>
+<!-- owl.carousel js -->
+<script src="{{ asset('frontOffice/js/owl.carousel.min.js') }}"></script>
+<!-- magnific-popup js -->
+<script src="{{ asset('frontOffice/js/jquery.magnific-popup.js') }}"></script>
+
+<!-- jquery.counterup js -->
+<script src="{{ asset('frontOffice/js/jquery.counterup.min.js') }}"></script>
+<script src="{{ asset('frontOffice/js/waypoints.min.js') }}"></script>
+<!-- jquery light box -->
+<script src="{{ asset('frontOffice/js/lightbox.min.js') }}"></script>
+<!-- Nivo slider js -->
+<script src="{{ asset('frontOffice/inc/custom-slider/js/jquery.nivo.slider.js') }}" type="text/javascript"></script>
+<script src="{{ asset('frontOffice/inc/custom-slider/home.js') }}" type="text/javascript"></script>
+<!-- main js -->
+<script src="{{ asset('frontOffice/js/main.js') }}"></script>
+<!-- slick js -->
+
+<script src="{{ asset('frontOffice/slick/slick.js') }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{ asset('frontOffice/slick/slick.min.js') }}" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+    $(document).on('ready', function() {
+
+
+        $(".center").slick({
+            dots: true,
+            infinite: true,
+            centerMode: true,
+            slidesToShow: 5,
+            slidesToScroll: 3,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            speed: 3000
+        });
+        $(".lazy").slick({
+            lazyLoad: 'ondemand', // ondemand progressive anticipated
+            infinite: true
+        });
+    });
+</script>
+
+<script src="d{{ asset('frontOffice/ticker/demo-files/run_prettify.js') }}"></script>
+
+<!-- jConveyorTicker plugin -->
+<script src="{{ asset('frontOffice/ticker/js/jquery.jConveyorTicker.min.js') }}"></script>
+
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+
+        /*! Default options:
+         *
+         *  anim_duration: 200
+         *  reverse_elm: false
+         *
+         */
+
+        $('.js-conveyor-1').jConveyorTicker();
+
+        $('.js-conveyor-2').jConveyorTicker({
+            anim_duration: 100
+        });
+
+        $('.js-conveyor-3').jConveyorTicker({
+            reverse_elm: true
+        });
+
+        $('.js-conveyor-4').jConveyorTicker({
+            force_loop: true
+        });
+
+    });
+</script>
+
+
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+
+        // email protection
+        $('.d-js-eaddress').each(function(){
+            var mAddress = $(this).html().replace('--at--','@').replace('--dot--','.');
+            $(this).html(mAddress).attr('href', 'mailto:' + mAddress);
+        });
+
+    });
+</script>
+<script src="{{ asset('frontOffice/ticker/js/ticker.js') }}"></script>
+<script>
+    $(function () {
+        $("ul#ticker01").liScroll();
+        $("ul#ticker02").liScroll({travelocity: 0.15});
+    });
+</script>
+
+</body>
+
+
+</html>

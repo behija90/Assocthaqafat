@@ -1,0 +1,111 @@
+{% extends 'backOffice/base.html.twig' %}
+{% block body %}
+    <div class="pull-right"><span class="text-muted"><b>1</b>&nbsp; – &nbsp;<b>12</b>&nbsp; of &nbsp;<b>35</b></span>
+        <div class="btn-group mlm">
+            <button type="button" class="btn btn-default ">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </button>
+            <button type="button" class="btn btn-default ">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </button>
+        </div>
+    </div>
+    <div class="pagination pull-right">
+        {{ knp_pagination_render(contacts) }}
+    </div>
+    <div><!--BEGIN TITLE & BREADCRUMB PAGE-->
+        <div class="page-content col-md-12 col-sm-9 ">
+                <ul  class="nav nav-tabs ">
+                    <li class="active">
+                        <a href="#home" data-toggle="tab">
+                            <span class="glyphicon glyphicon-inbox "></span>&nbsp;
+                            Messages récus
+                        </a>
+                    </li>
+                    <li><a href="#profile" data-toggle="tab"><span class="glyphicon glyphicon-inbox"></span>&nbsp;
+                            Messages envoyés</a></li>
+                    <li><a href="#messages" data-toggle="tab"><span class="glyphicon glyphicon-envelope"></span>&nbsp;
+                            Ecrire message</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
+                        <div class="list-group mail-box">
+                            {% for contact in contacts %}
+                            <a href="{{ path('voir_message',{'id': contact.id}) }}" class="list-group-item ">
+                                <span class="fa fa-star-o mrm mlm"></span>
+                                <span style="min-width: 120px; display: inline-block;">{{ contact.nom }}&nbsp;{{ contact.prenom }}</span>
+
+                                <span>{{ contact.sujet }}</span>&nbsp; -&nbsp;
+
+                                <span class="time-badge ">{{ contact.dateMessage|date('d/m/Y') }}</span>
+
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div id="profile" class="tab-pane fade in">
+                        <div class="list-group mail-box">
+                            <a href="#" class="list-group-item">
+                                <span class="fa fa-star-o mrm mlm"></span>
+                                <span style="min-width: 120px; display: inline-block;"class="name">Bhaumik Patel</span>
+                                <span>Sed ut perspiciatis unde</span>&nbsp; - &nbsp;<span style="font-size: 11px;" class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                <span class="time-badge">12:10 AM</span>
+                                <span class="pull-right mrl">
+                                     <span class="glyphicon glyphicon-paperclip"></span>
+                                </span>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div id="messages" class="tab-pane fade in">
+                        <div class="list-group mail-box">
+                            <div class="compose-mail">
+                                <div class="portlet box portlet-white">
+                                    <div class="portlet-header">
+                                        <div class="caption">Ecrire message</div>
+
+                                    </div>
+                                    <div class="portlet-body">
+                                        <form role="form-horizontal" method="post" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <div class="input-group"><span class="input-group-addon">A:</span><span class="input-icon"><input
+                                                                id="to" type="text" placeholder="" class="form-control "/><i class="fa fa-user"></i> </span></div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="input-group"><span
+                                                            class="input-group-addon">Sujet:</span><span class="input-icon"><input id="subject"
+                                                                                                            type="text"
+                                                                                                            placeholder=""
+                                                                                                            class="form-control"/><i class="fa fa-comment-o"></i> </span>
+                                                </div>
+                                            </div>
+                                            <div class="compose-editor mbl"><textarea rows="6"
+                                                                                      class="wysihtml5 form-control"></textarea>
+                                            </div>
+                                            <div class="form-group"><input type="file"/>
+                                                <p class="help-block"><i class="fa fa-paperclip"></i>&nbsp;
+                                                    Attachments</p></div>
+                                            <hr/>
+                                            <div class="compose-btn">
+                                                <button class="btn btn-sm btn-primary"><i class="fa fa-check"></i>&nbsp;
+                                                    Envoyer
+                                                </button>&nbsp;
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+        </div>
+    </div><!--END CONTENT-->
+    <!--BEGIN FOOTER-->
+
+
+
+{% endblock %}

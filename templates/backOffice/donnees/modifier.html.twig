@@ -1,0 +1,105 @@
+{% extends 'backOffice/base.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="portlet box portlet-blue">
+            <div class="portlet-header">
+                <div class="caption">Modifier News</div>
+                <div class="tools"><i class="fa fa-chevron-up"></i><i data-toggle="modal"
+                                                                      data-target="#modal-config"
+                                                                      class="fa fa-cog"></i><i
+                            class="fa fa-refresh"></i><i class="fa fa-times"></i>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <form role="form" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    <div class="row col-md-12 ">
+                        <div class="col-md-6">
+                            <div class="form-group"><label class="col-md-3 control-label">Titre Arabe</label>
+                                <div class="col-md-9">
+                                    {{ form_widget(form.titreNewAr, {'attr' : {'placeholder' : "Titre Arabe "}}) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group"><label class="col-md-3 control-label">Titre Anglais</label>
+                                <div class="col-md-9">
+                                    {{ form_widget(form.titreNewEn, {'attr' : {'placeholder' : "Titre Anglais "}}) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 ">
+                        <div class="col-md-6">
+                            <div class="form-group"><label
+                                        class="col-md-3 control-label">Contenu Ar</label>
+                                <div class="col-md-9">
+                                    {{ form_widget(form.contenuAr, {'attr' : {'placeholder' : "Contenu Arabe "}}) }}
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group"><label
+                                        class="col-md-3 control-label">Contenu En</label>
+                                <div class="col-md-9">
+                                    {{ form_widget(form.contenuEn, {'attr' : {'placeholder' : "Contenu Anglais "}}) }}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row col-md-12 ">
+                        <div class="col-md-6">
+                            <div class="form-group"><label class="col-md-3 control-label">Lien fb AA</label>
+                                <div class="col-md-9">
+                                    {{ form_widget(form.lienFbAr, {'attr' : {'placeholder' : "Lien Arabe "}}) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group"><label class="col-md-3 control-label">Titre Anglais</label>
+                                <div class="col-md-9">
+                                    {{ form_widget(form.lienFbEn, {'attr' : {'placeholder' : "Lien Anglais "}}) }}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row col-md-12 ">
+                        <div class="col-md-6">
+
+                            <div class="form-group"><label class="col-md-3 control-label">Publier</label>
+                                <div class="col-md-9">
+                                    {{ form_widget(form.publier) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group"><label for="exampleInputFile"
+                                                           class="col-md-3 control-label">File
+                                    input</label>
+                                <div class="col-md-9">
+                                    {{ form_widget(form.file) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {{ form_rest(form) }}
+                    <button type="submit" class="btn btn-success">Submit</button>&nbsp;<button
+                            type="button" class="btn btn-default">Cancel
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+    {% endblock %}
+
+
+

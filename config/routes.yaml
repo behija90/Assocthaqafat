@@ -1,0 +1,11 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+app_back_office:
+  resource: '../src/Controller/BackOffice'
+  prefix: administration
+
+app_front_office:
+  resource: '../src/Controller/FrontOffice'
+  prefix:   /

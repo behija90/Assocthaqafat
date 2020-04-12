@@ -1,0 +1,125 @@
+<header>
+    <div class="header-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <div class="social-media-area">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D8%B1%D8%A7%D8%AB-%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83-%D8%AB%D9%82%D9%80%D9%80%D8%A7%D9%81%D9%80%D9%80%D8%A7%D8%AA-ATPP-Thaq%C3%A2f%C3%A2t-1616097741826549/"
+                                       class="active"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+
+                            </ul>
+
+                        </nav>
+                    </div>
+                        {% for locale in locales if locale == 'ar' %}
+
+                        <div id="langue-arabe">
+                            <div id="langue-arabe-content"><a
+                                        href="{{ path('change_locale', {'locale': locale}) }}"><img
+                                            src="{{ asset('img/'~locale~'.png') }}" alt="">
+                                    {{ locale }}</a></div><!--index.php?id_page=0&lang=ar-->
+                        </div>
+                        {% endfor %}
+                    {% for locale in locales if locale == 'en' %}
+
+                        <div id="langue-arabe">
+                            <div id="langue-arabe-content"><a
+                                        href="{{ path('change_locale', {'locale': locale}) }}"><img
+                                            src="{{ asset('img/'~locale~'.png') }}" alt="">
+                                    {{ locale }}</a></div><!--index.php?id_page=0&lang=ar-->
+                        </div>
+                    {% endfor %}
+                    {% for locale in locales if locale == 'fr' %}
+
+                        <div id="langue-arabe">
+                            <div id="langue-arabe-content"><a
+                                        href="{{ path('change_locale', {'locale': locale}) }}"><img
+                                            src="{{ asset('img/'~locale~'.png') }}" alt="">
+                                    {{ locale }}</a></div><!--index.php?id_page=0&lang=ar-->
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="header-top-left">
+                        <ul>
+                            <li><span> {{ "now"|date(" اليوم d-m-Y الساعة h:i") }}</span></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="header-middle-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12 col-xs-12" style="padding-top:45px;">
+                    <div style="font-size: 30px; font-family: 'Sakkal Majalla' ">{{ 'site.name'|trans }}</div>
+                </div>
+                <div class="col-md-4 offset-md-4 col-lg-offset-4 col-sm-12 col-xs-12">
+                    <div class="logo-area ">
+                        <a href="{{ path('front_page_accueil') }}"><img src="{{ asset('frontOffice/images/logo.png') }}"
+                                                                        alt="logo"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom-area" id="sticky" style="background-color: #21afd3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="navbar-header">
+                        <div class="col-sm-8 col-xs-8 padding-null">
+                            <button class="navbar-toggle" type="button" data-toggle="collapse"
+                                    data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="main-menu navbar-collapse collapse">
+                        <nav>
+                            <ul>
+                                <li><a href="{{ path('front_page_accueil') }}">{{ 'navbar.home'|trans }} </a></li>
+                                <li><a href="{{ path('front_membres') }}">{{ 'navbar.membres'|trans }} </a></li>
+                                <li><a href="{{ path('front_activites_index') }}">{{ 'navbar.activities'|trans }}</a>
+                                </li>
+                                <li><a href="{{ path('front_affiliation') }}">{{ 'navbar.affliation'|trans }}</a></li>
+                                <li><a href="{{ path('front_bulletins_index') }}">{{ 'navbar.newsletter'|trans }} </a>
+                                </li>
+                                <li><a href="{{ path('front_news_index') }}">{{ 'navbar.news'|trans }} </a></li>
+                                <li><a href="{{ path('front_contact') }}">{{ 'navbar.contact'|trans }} </a></li>
+
+                                {#<li><a href="index.html" class="has dropdown-toggle">اللغة <i
+                                                class="fa fa-chevron-down"></i></a>
+                                    <ul class="sub-menu">
+                                        {% for locale in locales if locale != app.request.locale %}
+                                            <li class="nav-item">
+                                                <a class="nav-link"
+                                                   href="{{ path('change_locale', {'locale': locale}) }}"><img
+                                                            src="{{ asset('img/'~locale~'.png') }}" alt="{{ locale }}"></a>
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </li>#}
+
+                            </ul>
+                        </nav>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>

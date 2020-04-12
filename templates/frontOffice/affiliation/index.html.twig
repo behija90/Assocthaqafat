@@ -1,0 +1,140 @@
+{% extends 'frontOffice/base.html.twig' %}
+{% block page_title %}الانخراط{% endblock %}
+
+{% block body %}
+    <div class="single-blog-page-area contact-page-area" dir="rtl">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 float-rtl first-col">
+
+                    <div class="leave-comments-area">
+                        <h1 class="title-bg" >جـــذاذة انخـــراط</h1>
+                        <div id="form-messages"></div>
+                        <form id="contact-form" method="post" role="form" enctype="multipart/form-data">
+                            <fieldset>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>تاريخ الولادة ومكانها</label>
+                                            {{ form_widget(form.dateLieuNaissance) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>الإســـم واللقـــب</label>
+                                            {{ form_widget(form.nomPrenom) }}
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>تاريخ الإصدار ومكانه</label>
+                                            {{ form_widget(form.dateLieuEmission) }}
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>عدد بطاقة التعريف الوطنية/جواز السفر</label>
+                                            {{ form_widget(form.numCin) }}
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>الجنسيـّــة </label>
+                                            {{ form_widget(form.nationalite) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>الهاتف </label>
+                                            {{ form_widget(form.telephone) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                           <label>المؤسســة</label>
+                                            {{ form_widget(form.entreprise) }}
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>المهنـــة</label>
+                                            {{ form_widget(form.profession) }}
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>العنـــوان الالكترونـــي</label>
+                                            {{ form_widget(form.email) }}
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>العنــوان البريــدي</label>
+                                            {{ form_widget(form.adresse) }}
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>صنف الانخراط</label>
+                                            {{ form_widget(form.categorieAffi) }}
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 ">
+                                        <div class="form-group">
+                                            <label>وصل تنزيل مبلغ الانخراط </label>
+                                            {{ form_widget(form.image) }}
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 float-rtl first-col">
+
+                                        <p>
+                                        <b> ملاحظة: </b>
+                                              لا يعد هذا الانخراط نهائيا إلا بعد الإمضاء على القانون الداخلي للجمعية وتنزيل مبلغ الانخراط بالحساب البنكي للجمعية <br>
+                                            (بنك الأمان 39 0152105508217 094 07 ). </p>
+                                    </div>
+                                    {{ form_rest(form) }}
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <button class="btn-send" type="submit">إرســــال </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

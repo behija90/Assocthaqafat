@@ -1,0 +1,42 @@
+liip_imagine:
+  # valid drivers options include "gd" or "gmagick" or "imagick"
+  #driver: "gd"
+
+  resolvers:
+    default:
+      web_path: ~
+
+  #        default:
+  #            web_path:
+  #                web_root: "%kernel.root_dir%/.."
+  #                cache_prefix: "media/cache"
+
+  # define your filter sets under this option
+  filter_sets:
+    cache: ~
+
+    image_100_100:
+      quality: 80
+      filters:
+        resize:
+          size: [100, 100]
+
+
+    image_130_103:
+      quality: 80
+      filters:
+        resize:
+          size: [130, 103]
+
+    image_300_300:
+      quality: 80
+      filters:
+        resize:
+          size: [300, 300]
+
+    image_770_470:
+      quality: 80
+      filters:
+        resize:
+          size: [770, 470]
+

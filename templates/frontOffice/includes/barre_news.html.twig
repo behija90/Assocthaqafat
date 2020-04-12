@@ -1,0 +1,13 @@
+<div>
+    <div class="col-md-11 page-title ticker-div">
+        <ul id="ticker01" style="left: -98%">
+            {% for news in derniersNews %}
+                <li>
+                    <a href="{{ path('front_news_voir', {'slug': news.slugAr}) }}">
+                                <span> <img src="{{ asset('frontOffice/images/fav.png') }}"
+                                            alt="{{ news.titreNewAr }}" style="height: 25px; width: 25px;margin-bottom: auto;alignment: center;"> {{ news.titreNewAr }}</span></a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

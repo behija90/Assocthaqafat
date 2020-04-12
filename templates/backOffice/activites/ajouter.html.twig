@@ -1,0 +1,134 @@
+{% extends 'backOffice/base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-lg-12"><h3>إضافة نشاط جديد </h3>
+            <ul class="closeable-tabs nav nav-tabs">
+                <li class="active"><a href="#home" data-toggle="tab">
+                        <button type="button" class="close closeTab mlm">x</button>
+                        العربية </a></li>
+                <li><a href="#profile" data-toggle="tab">
+                        <button type="button" class="close closeTab mlm">x</button>
+                        English</a></li>
+
+
+                <li><a href="#profile2" tabindex="-1" data-toggle="tab">
+                        <button type="button" class="close closeTab mlm"><i class="fa fa-file-video-o"></i></button>
+                        Videos</a></li>
+                <li><a href="#profile3" tabindex="-1" data-toggle="tab">
+                        <button type="button" class="close closeTab mlm"><i class="fa fa-picture-o"></i></button>
+                        Images</a></li>
+            </ul>
+            <form class="form-validate" method="post" role="form" enctype="multipart/form-data">
+                <div id="myCloseableTabContent" class="tab-content">
+                    <div id="home" class="tab-pane fade in active"  dir="rtl">
+                        <div>
+                            <div class="portlet box portlet-yellow" >
+                                <div class="portlet-header ">
+                                    <div class="caption" > إضافة نشاط جديد </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="form-group"><label for="" class="control-label">عنوان النشاط  </label>
+
+                                        {{ form_widget(form.titreAr) }}
+                                    </div>
+                                    <div class="form-group"><label for="" class="control-label">محتوى النشاط  </label>
+                                        {{ form_widget(form.contenuAr) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="profile" class="tab-pane fade">
+                        <div>
+                            <div class="portlet box portlet-yellow">
+                                <div class="portlet-header">
+                                    <div class="caption">add English activity</div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="form-group"><label for="" class="control-label">Title activity </label>
+                                        {{ form_widget(form.titreEn) }}
+                                    </div>
+                                    <div class="form-group"><label for="" class="control-label">Content english</label>
+                                        {{ form_widget(form.contenuEn) }}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="profile2" class="tab-pane fade">
+                        <div>
+                            <div class="portlet box portlet-yellow">
+                                <div class="portlet-header">
+                                    <div class="caption">Videos</div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="form-group "><label for="" class="control-label"> Videos</label>
+                                        <ul class="add-videos " style="list-style: none;"
+                                            data-prototype="{{ form_widget(form.videos.vars.prototype)|e }}">
+                                            {% for element in form.videos %}
+                                                <li>
+                                                    {{ form_widget(element) }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="profile3" class="tab-pane fade">
+                        <div>
+                            <div class="portlet box portlet-yellow">
+                                <div class="portlet-header">
+                                    <div class="caption">Image de couverture</div>
+                                </div>
+
+                                <div class="portlet-body">
+                                    <div class="form-group"><label for="" class="control-label">Image </label>
+                                        {{ form_widget(form.image.file) }}
+                                    </div>
+                                </div>
+
+                                <div class="portlet-header">
+                                    <div class="caption">Images</div>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="form-group"><label for="" class="control-label"> Images</label>
+                                        <ul class="add-images" style="list-style: none;"
+                                            data-prototype="{{ form_widget(form.images.vars.prototype)|e }}">
+                                            {% for element in form.images %}
+                                                <li>
+                                                    {{ form_widget(element) }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_widget(form.publier) }}
+                                    </div>
+
+                                    {{ form_rest(form) }}
+                                    <button type="submit" class="btn btn-success">Ajouter</button>&nbsp;
+                                    <button
+                                            type="button" class="btn btn-default">Annuler
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
